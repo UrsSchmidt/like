@@ -18,7 +18,7 @@ like (sc:s) (pc:p) =
     case pc of
         '?' -> like s p
         '*' -> h (sc:s) p
-               where h = \s2 p2 -> not (null s2) && (like s2 p2 || h (tail s2) p2)
+               where h = \t q -> not (null t) && (like t q || h (tail t) q)
         '#' -> (isDigit sc) && like s p
         _   -> sc == pc && like s p
 
