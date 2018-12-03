@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # C
-gcc -std=c11 -Wall -Wpedantic -o 'likec' 'like.c'
+gcc -std=c11 -Wall -Wpedantic -o 'likec' 'src/like.c'
 # Java
-javac 'Like.java'
+javac -d '.' 'src/Like.java'
 # Haskell
-ghc -Wall -o 'likehs' 'like.hs'
+ghc -Wall -o 'likehs' -outputdir '.' 'src/like.hs' >/dev/null
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
     IFS=';' read -r -a array <<< "$line"
@@ -29,4 +29,4 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     fi
 done < 'tests.txt'
 
-rm 'likec' 'Like.class' 'likehs' 'like.hi' 'like.o'
+rm 'likec' 'likehs' *.class *.hi *.o
