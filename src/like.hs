@@ -13,9 +13,9 @@ import System.Environment
 like :: String -> String -> Bool
 like [] p   = all (== '*') p
 like _  []  = False
-like _  "*" = True
 like (sc:s) (pc:p) =
-    case pc of
+    if all (== '*') (pc:p) then True
+    else case pc of
         '?' -> like s p
         '*' -> h (sc:s) p
                where h = \t q -> not (null t) && (like t q || h (tail t) q)

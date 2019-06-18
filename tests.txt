@@ -55,6 +55,7 @@ abc;ab?;true
 abc;abc;true
 abc;abc#;false
 abc;abc*;true
+abc;abc**;true
 abc;abc*d;false
 abc;abc?;false
 abc;abcde;false
