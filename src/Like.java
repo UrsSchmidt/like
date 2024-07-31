@@ -6,7 +6,7 @@ public class Like {
      * <code>?</code> matches exactly one character<br />
      * <code>*</code> matches zero or more characters<br />
      * <code>#</code> matches exactly one digit<br />
-     * 
+     *
      * @author Urs Schmidt
      */
     public static boolean like(String str, String pattern) {
