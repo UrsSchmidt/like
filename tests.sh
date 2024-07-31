@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # C
-gcc -std=c11 -Wall -Wpedantic -o 'likec' 'src/like.c'
+gcc -std=c18 -Wall -Wpedantic -o 'likec' 'src/like.c'
 # Java
 javac -d '.' 'src/Like.java'
 # Haskell
